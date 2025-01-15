@@ -24,6 +24,7 @@ Then this extension is for you !
 3. Select 'Load Unpacked'
 4. Select the cloned folder
 
+![playbacklog-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/bbc327db-ed8a-4421-9ad2-57f65de9a9d8)
 
 
 ## Chrome webstore
