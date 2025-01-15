@@ -2,10 +2,11 @@
 # PlayBacklog
 
 Receive gentle reminders to watch the YouTube videos you've queued up, ensuring nothing gets left behind. 
-
-#
-You can pick when to remind you about videos.\
 While video suggestions are random, the latest videos in your queue are given higher priority.
+
+## Upcoming features
+- You can pick when to remind you about videos.\
+- You can choose not to remind about a video ever again.\
 ## Installation
 
 Clone this repo\
