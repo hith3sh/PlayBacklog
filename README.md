@@ -4,7 +4,7 @@
 </p>
 
 
-Does your `Youtube Watch Later` playlist gets filled up with thousands of vid⏰⏰eos that you never watch?
+Does your `Youtube Watch Later` playlist gets filled up with thousands of videos that you never watch?
 
 Do you want to receive random reminders to watch those YouTube videos?
 
