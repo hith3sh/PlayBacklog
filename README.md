@@ -5,7 +5,7 @@ Receive gentle reminders to watch the YouTube videos you've queued up, ensuring 
 
 #
 You can pick when to remind you about videos.\
- While suggestions are random, the latest videos in your queue are given higher priority.
+While video suggestions are random, the latest videos in your queue are given higher priority.
 ## Installation
 
 Clone this repo\
@@ -21,9 +21,9 @@ FireFox browser add-ons\
 ## FAQ
 
 #### Can't see notifications ?
-Solution 1:
+#### Solution 1:
 Open Chrome > Go chrome://flags > Search Enable native notifications > Change it to Disabled > Relaunch Chrome
 
-Solution 2:
+#### Solution 2:
 Go to MacOS System Preferences > Notifications > Turn on Notifications for Banners/Alerts as shown here (likely previously it's Off)
 

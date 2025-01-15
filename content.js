@@ -67,46 +67,40 @@ window.addEventListener('load', async() =>{
 });
 
 //runs automatically when script loads
-// (async function () {
-//     const YOUTUBE_URL_PATTERN = "https://www.youtube.com";
-  
-//     // Check if the user has already been reminded today
-//     chrome.storage.local.get("lastReminderDate", (data) => {
-//       const today = new Date().toDateString(); // Get today's date as a string
-  
-//       if (data.lastReminderDate !== today) {
-//         // Update the last reminder date
-//         chrome.storage.local.set({ lastReminderDate: today });
-  
-//         // Fetch the "Watch Later" videos
-//         const video = getWeightedRandomVideo(videos);
-
-//         // Notify the background script
-//         chrome.runtime.sendMessage({ type: "SHOW_REMINDER", video });
-//       }
-//     });
-// })();
-
-
-
-//remove later
 (async function() {
     console.log('Starting video fetch...');
     try {
-        const videos = await getStoredVideos();
-        console.log('Fetched videos:', videos.length);
-
-        if (videos.length > 0) {
-            const video = getWeightedRandomVideo(videos);
-            console.log('Selected random video:', video);
-            
-            chrome.runtime.sendMessage({ 
-                type: "SHOW_REMINDER", 
-                video 
+        // Check last reminder date
+        const data = await new Promise(resolve => {
+            chrome.storage.local.get("lastReminderDate", resolve);
+        });
+        
+        const today = new Date().toDateString();
+        
+        if (data.lastReminderDate !== today) {
+            // Update last reminder date
+            await new Promise(resolve => {
+                chrome.storage.local.set({ lastReminderDate: today }, resolve);
             });
+            
+            // Fetch and process videos
+            const videos = await getStoredVideos();
+            console.log('Fetched videos:', videos.length);
+
+            if (videos.length > 0) {
+                const video = getWeightedRandomVideo(videos);
+                console.log('Selected random video:', video);
+                
+                chrome.runtime.sendMessage({ 
+                    type: "SHOW_REMINDER", 
+                    video 
+                });
+            }
+        } else {
+            console.log('Already reminded today');
         }
     } catch (error) {
-        console.error('Error fetching videos:', error);
+        console.error('Error in reminder process:', error);
     }
 })();
 

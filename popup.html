@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Watch Later Reminder</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Backlog</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Watch Later Reminder</h2>
-  <button id="visit-watch-later" onClick="visitWatchLater()"> Visit watch later</button>
-  <p id="status"></p>
+  <div class="container">
+    <header> 
+      <img src="icons/icon48.png" alt="Watch backlog" class="logo">
+      <h1>Play Backlog</h1>
+    </header>
+    <button id="watch-later-tab" onClick="visitWatchLater()"> See Watch Later Videos </button>
+    
+    <nav>
+      <ul>
+          <li><a href="https://github.com/hith3sh/PlayBacklog" target="_blank">GitHub</a></li>
+          <li><a href="https://github.com/hith3sh/PlayBacklog/issues" target="_blank">Help</a></li>
+      </ul>
+  </nav>
+
+    <footer>
+      <p>v1.0.0</p>
+    </footer>
+
+  </div>
+  
   <script src="popup.js"></script>
 </body>
 </html>
